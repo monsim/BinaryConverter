@@ -13,5 +13,6 @@ public class ConversionTester {
 		Conversion tester = new Conversion();
 		System.out.println(tester.convertDecimalToBinary(16));
 		System.out.println(Integer.toBinaryString(16));
+		System.out.println(tester.positiveBinaryToDecimal("01011"));
 	}
 }
