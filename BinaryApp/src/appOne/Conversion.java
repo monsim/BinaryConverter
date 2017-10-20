@@ -147,7 +147,7 @@ public class Conversion {
         System.out.println("withoutSign: " + withoutSign);
         double intermediate = positiveBinaryToDecimal(withoutSign);
         System.out.println("intermediate: " + intermediate);
-        if (intermediate % 8 == 0) return intermediate; 
+        if (intermediate % 8 == 0) return 0-intermediate; 
         double x = Math.abs(lowerBound) - intermediate;
         System.out.println("x: " + x);
         System.out.println("lb: " + lowerBound);
