@@ -123,37 +123,38 @@ public class Conversion {
 		else upperBound = Math.pow(2, result-1)-1;  
 		lowerBound = upperBound+1; 
 		
-		System.out.println("-" + lowerBound + ", " + upperBound);
+//		System.out.println("-" + lowerBound + ", " + upperBound);
 		return result; 
 	}
 	
 	
 	public double binaryToDecimal(String number) {
 		int length = number.length();
-		double lowerB = Math.pow(2, length-1);
 		upperBound = lowerBound - 1;
 		if (number.substring(0,1).equals("1")) { //sigbit if 1. negative
-			return negativeBinaryToDecimal(number, lowerB);
+			System.out.println("negative");
+			return negativeBinaryToDecimal(number);
 		} else if (number.substring(0,1).equals("0")){ //sigbit is 0. positive
+			System.out.println("positive");
 			return positiveBinaryToDecimal(number);
 		} else {
 			return 0;
 		}
 	}
 	
-	public double negativeBinaryToDecimal(String number, double lowerB) {
+	public double negativeBinaryToDecimal(String number) {
         String withoutSign = number.substring(1);
         System.out.println("withoutSign: " + withoutSign);
         double intermediate = positiveBinaryToDecimal(withoutSign);
         System.out.println("intermediate: " + intermediate);
+        if (intermediate % 8 == 0) return intermediate; 
         double x = Math.abs(lowerBound) - intermediate;
         System.out.println("x: " + x);
-        System.out.println("lb: " + lowerBound + " lower: " + lowerB);
-        x = lowerB - x;
+        System.out.println("lb: " + lowerBound);
         return 0-x;
     }
 	
-	
+
 	public double positiveBinaryToDecimal(String number) {
 		double toReturn = 0;
 		int i = 0;
@@ -169,5 +170,17 @@ public class Conversion {
 		}
 		return toReturn;
 		
+	}
+	
+	public boolean isPowerOfTwo(double number) {
+		double baseTen = Math.log10(number); 
+		double logTwo = Math.log10(2);
+		double result = baseTen / logTwo;
+		if (Math.round(number) == number) {
+			System.out.println("true");
+			return true;
+		}
+		System.out.println("false");
+		return false;
 	}
 }
