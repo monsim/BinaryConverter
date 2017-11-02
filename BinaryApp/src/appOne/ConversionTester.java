@@ -16,7 +16,5 @@ public class ConversionTester {
 				
 		double decimal = tester.binaryToDecimal(binary); 
 		System.out.println(decimal);
-//		System.out.println(tester.convertDecimalToBinary(-8900));
-//		System.out.println(Integer.toBinaryString(-8900));
 	}
 }

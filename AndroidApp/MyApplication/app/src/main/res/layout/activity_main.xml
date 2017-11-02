@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.monsi.binaryapp.MainActivity">
+
+    <EditText
+        android:id="@+id/decimalInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_below="@+id/decimalPrompt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/decimalPrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Decimal"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/binaryPrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/decimalOutput"
+        android:layout_marginTop="90dp"
+        android:text="Binary (2's complement)"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/binaryInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/binaryPrompt"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/decimalOutput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/decimalInput"
+        android:layout_marginTop="56dp"
+        android:hint="Output"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/binaryOutput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Output"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="38dp" />
+
+    <Button
+        android:id="@+id/decimalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/decimalPrompt"
+        android:onClick="decimalInputClick"
+        android:text="Convert" />
+</RelativeLayout>
